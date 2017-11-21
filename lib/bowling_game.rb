@@ -1,8 +1,10 @@
 class BowlingGame
+
     def pins(rolls)
+        @score = rolls.inject(:+)
     end
 
     def score
-        0
+        @score
     end
 end
