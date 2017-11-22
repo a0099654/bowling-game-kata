@@ -13,11 +13,15 @@ class BowlingGame
         score = 0
         
         while frame < 10
-            score += @rolls[first_in_frame] + @rolls[first_in_frame+1]
-            frame += 1 #to increment this while loop
+            if @rolls[first_in_frame] + @rolls[first_in_frame+1] == 10 
+                score += 10 + @rolls[first_in_frame+2]
+            else
+                score += @rolls[first_in_frame] + @rolls[first_in_frame+1]
+            end
+            frame += 1 
             first_in_frame += 2
-        
         end
+
         score
     end
 
